@@ -33,4 +33,4 @@ steps:
     zipAfterPublish: true
   
 - task: PublishBuildArtifacts@1
-  displayNAme: 'publish artifacts'
+  displayName: 'publish artifacts'
