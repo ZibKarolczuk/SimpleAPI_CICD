@@ -28,12 +28,23 @@ namespace SimpleAPI.Test
         [Fact()]
         public async Task Get_RetrievedForecastGetValue_Success()
         {
-            var expectedResult = "returning value with ID 3";
-            var response = await _client.GetAsync("/weatherforecast/value/3");
+            var expectedResult = "returning value with ID 2";
+            var response = await _client.GetAsync("/weatherforecast/value/2");
 
             var content = await response.Content.ReadAsStringAsync();
 
             Assert.Equal(content, expectedResult);
+        }
+
+        [Fact()]
+        public async Task Get_RetrievedForecastGetValue_ComparingIncorrectResults()
+        {
+            var expectedResult = "returning value with ID 1";
+            var response = await _client.GetAsync("/weatherforecast/value/2");
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            Assert.NotEqual(content, expectedResult);
         }
     }
 }
