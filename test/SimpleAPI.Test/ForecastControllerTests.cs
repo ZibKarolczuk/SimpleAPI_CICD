@@ -29,7 +29,7 @@ namespace SimpleAPI.Test
         public async Task Get_RetrievedForecastGetValue_Success()
         {
             var expectedResult = "returning value with ID 3";
-            var response = await _client.GetAsync("/weatherforecast/value/4");
+            var response = await _client.GetAsync("/weatherforecast/value/3");
 
             var content = await response.Content.ReadAsStringAsync();
 
